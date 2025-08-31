@@ -24,3 +24,4 @@ npm run build    # outputs to _site/
 ## Notes
 - The site is purely static. Buttons link out to the IBM TechMeet site, HomeTown registration, and Marist map.
 - Edit `src/_data/links.json` to update those URLs.
+# test trigger
