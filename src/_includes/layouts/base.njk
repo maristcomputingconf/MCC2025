@@ -6,8 +6,19 @@
   <title>{{ title or "Marist Computing Conference" }}</title>
   <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}">
   <meta name="description" content="Marist Computing Conference — November 7, 2025 — Murray Student Center">
+
+  {% if site.is_preview %}<meta name="robots" content="noindex, nofollow">{% endif %}
+
+
 </head>
 <body>
+
+    {% if site.is_preview %}
+    <div style="background:#fff3cd;border-bottom:2px solid #ffec99;padding:.6rem 1rem;font-weight:600;">
+      Preview site for internal review — not the official conference website.
+    </div>
+    {% endif %}
+
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="container">
@@ -28,7 +39,10 @@
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 School of Computer Science & Mathematics, Marist University</p>
+      {% if site.is_preview %}<p><em>Preview / practice build</em></p>{% endif %}
     </div>
   </footer>
+
+
 </body>
 </html>
