@@ -1,0 +1,13 @@
+{
+  "name": "eleventy-mcc-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "ELEVENTY_ENV=dev npx @11ty/eleventy --serve --quiet",
+    "build": "npx @11ty/eleventy",
+    "clean": "rm -rf _site .cache"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
