@@ -13,3 +13,4 @@ Thumbs.db
 # Editor settings (optional but common)
 .vscode/
 .idea/
+*:Zone.Identifier
