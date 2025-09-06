@@ -10,7 +10,7 @@ permalink: /index.html
   <p>Be inspired to do more at the Marist Computing Conference. Talks, keynote lunch, networking—and a co-located student poster session (TechMeet).</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="{{ links.hometown_url }}">Register (HomeTown)</a>
-    <a class="btn btn-outline" href="{{ links.ibm_poster_site_url }}">Student Posters (IBM site)</a>
+    <a class="btn btn-outline" href="{{ links.techmeet_url }}">MHV TechMeet</a>
     <a class="btn btn-outline" href="{{ links.map_url }}">Campus Map</a>
   </div>
 </section>

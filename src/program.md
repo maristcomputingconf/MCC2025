@@ -20,5 +20,5 @@ permalink: /program/index.html
 
 <div class="cta-row">
   <a class="btn btn-primary" href="{{ links.hometown_url }}">Register (HomeTown)</a>
-  <a class="btn btn-outline" href="{{ links.ibm_poster_site_url }}">Student Posters (IBM site)</a>
+  <a class="btn btn-outline" href="{{ links.techmeet_url }}">Student Posters (IBM site)</a>
 </div>
