@@ -1,28 +1,124 @@
+/* Updated to be Marist Branding Compliant */
+/* Note to self: Please remember NOT to Format Document */
+
 :root {
-  --marist-red: #C8102E;
   --text: #222;
   --bg: #fff;
   --muted: #666;
-  --link: #0645ad;
+  --link: #c91235;
 }
+
+/* Marist Brand Styles */
+:root {
+  --marist-red: #c91235;      /* primary */
+  --greystone-gray: #63666f;  /* accent */
+  --dark-gray: #989AA5;       /* secondary */
+  --white: #ffffff;
+
+  --font-serif: 'Source Serif 4', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* smoother text */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+img, svg { max-width: 100%; height: auto; display: block; }
+
+/* body + type */
+body {
+  font-family: var(--font-sans);
+  color: var(--greystone-gray);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Headlines */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--marist-red);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h1 { font-size: clamp(1.875rem, 2.6vw, 2.5rem); line-height: 1.2; }
+h2 { font-size: clamp(1.375rem, 1.8vw, 1.75rem); }
+h3 { font-size: clamp(1.125rem, 1.4vw, 1.25rem); }
+
+/* links: brand red + underline on hover/focus for a11y */
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+/* focus visibility across the site */
+:focus-visible {
+  outline: 3px solid var(--marist-red);
+  outline-offset: 2px;
+}
+
+/* layout */
 .container { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
-.site-header { background: var(--marist-red); color: #fff; }
-.site-header a { color: #fff; text-decoration: none; }
-.site-title { margin: 0; padding: 1rem 0; }
+
+/* Nav/Header */
+.site-header {
+  background: var(--marist-red);
+  color: var(--white);
+  padding: 1rem;
+}
+.site-header a { color: var(--white); font-weight: 600; }
+.site-title { margin: 0; padding: 0.5rem 0; }
 .site-nav a { margin-right: 1rem; font-weight: 600; }
+.site-nav a[aria-current="page"] { text-decoration: underline; }
+
+/* hero */
 .hero { padding: 2rem 0; border-bottom: 4px solid var(--marist-red); }
-.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
-.btn { display: inline-block; padding: .75rem 1rem; border-radius: .5rem; text-decoration: none; font-weight: 700; }
+
+/* buttons */
+.btn, button {
+  display: inline-block;
+  background: var(--marist-red);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn:hover, button:hover { background: var(--greystone-gray); }
+.btn:focus-visible, button:focus-visible { outline: 3px solid var(--greystone-gray); }
+
 .btn-primary { background: var(--marist-red); color: #fff; }
-.btn-outline { border: 2px solid var(--marist-red); color: var(--marist-red); background: #fff; }
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--marist-red);
+  color: var(--marist-red);
+}
+.btn-outline:hover { background: var(--marist-red); color: #fff; }
+
+/* content blocks */
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card { padding: 1rem; border: 1px solid #e9e9e9; border-radius: .5rem; }
+
+/* schedule list */
 .schedule { margin: 2rem 0; }
 .schedule-item { padding: .75rem 0; border-bottom: 1px solid #eee; }
 .time { font-weight: 700; }
-.location { color: var(--muted); }
-.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.card { padding: 1rem; border: 1px solid #eee; border-radius: .5rem; }
-.site-footer { background: #f6f6f6; color: var(--muted); padding: 1rem 0; margin-top: 2rem; }
-.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.location {
+  color: var(--dark-gray);           /* secondary text */
+  font-size: 0.95rem;                /* keep readable to maintain contrast */
+}
+
+/* footer */
+.site-footer {
+  background: #f6f6f6;               /* light neutral; optional: use Bright Gray #d9dae4 */
+  color: var(--dark-gray);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* skip link */
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
 .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
