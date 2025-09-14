@@ -177,3 +177,10 @@ a:hover, a:focus { text-decoration: underline; }
   position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
 .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
+
+.site-nav a.disabled {
+  pointer-events: none;   /* not clickable */
+  color: var(--dark-gray); /* muted */
+  cursor: default;
+  text-decoration: none;
+}
