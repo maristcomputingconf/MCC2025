@@ -161,3 +161,48 @@ a:hover, a:focus { text-decoration: underline; }
   color: var(--white);
   text-decoration: none;
 }
+
+/* Keep nav links horizontal */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown container */
+.site-nav .dropdown {
+  position: relative;
+}
+
+/* Dropdown menu hidden by default */
+.site-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;   /* directly below the Program tab */
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--dark-gray);
+  min-width: 200px;
+  flex-direction: column;   /* stack links vertically */
+}
+
+/* Links inside dropdown */
+.site-nav .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--greystone-gray);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Show on hover */
+.site-nav .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Hover/focus state */
+.site-nav .dropdown-menu a:hover,
+.site-nav .dropdown-menu a:focus {
+  background: var(--marist-red);
+  color: var(--white);
+  text-decoration: none;
+}
