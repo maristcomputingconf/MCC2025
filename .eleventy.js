@@ -12,7 +12,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("linkTechMeet", function (content) {
     return content.replace(
       /\b(MHV\s*TechMeet|TechMeet)\b/g,
-      `<a href="https://bit.ly/mhvtm-2024" target="_blank" rel="noopener noreferrer">$1</a>`
+      `<a href="https://bit.ly/mhvtm-2025" target="_blank" rel="noopener noreferrer">$1</a>`
     );
   });
 
