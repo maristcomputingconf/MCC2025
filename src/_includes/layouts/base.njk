@@ -29,20 +29,29 @@
       <nav class="site-nav" aria-label="Main">
         <a href="{{ '/' | url }}">Home</a>
 
-        <div class="dropdown">
-          <a href="{{ '/program/' | url }}">Program</a>
-          <div class="dropdown-menu">
-            <a href="{{ '/program/at-a-glance/' | url }}">At a glance</a>
-            <a href="{{ '/program/full-schedule/' | url }}">Full conference schedule</a>
+        <!-- Program dropdown -->
+          <div class="dropdown">
+            <a href="{{ '/program/' | url }}">Program</a>
+            <div class="dropdown-menu">
+              <a href="{{ '/program/at-a-glance/' | url }}">At a glance</a>
+              <a href="{{ '/program/full-schedule/' | url }}">Full conference schedule</a>
+            </div>
           </div>
-          <a href="{{ '/venue/' | url }}">Venue</a>
-          <div class="dropdown-menu">
-            <a href="{{ '/venue/campus-map/' | url }}">Campus Map</a>
-          </div>
-          <a href="#" class="disabled" aria-disabled="true">Registration (TBD)</a>
-        </div>
 
-        <a href="{{ '/about/' | url }}">About</a>
+          <!-- Venue dropdown -->
+          <div class="dropdown">
+            <a href="{{ '/venue/' | url }}">Venue</a>
+            <div class="dropdown-menu">
+              <a href="{{ '/venue/campus-map/' | url }}">Campus Map</a>
+            </div>
+          </div>
+
+          <!-- Registration placeholder -->
+          <a href="#" class="disabled" aria-disabled="true">Registration (TBD)</a>
+
+          <!-- About -->
+          <a href="{{ '/about/' | url }}">About</a>
+          
       </nav>
 
 
