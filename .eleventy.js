@@ -1,12 +1,20 @@
 // .eleventy.js
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 
   // Pass through the 'public' folder to the output
   eleventyConfig.addPassthroughCopy({ "public": "/" });
 
   // Make sure assets are copied
   eleventyConfig.addPassthroughCopy("assets");
+
+  // Auto-link "TechMeet" mentions
+  eleventyConfig.addFilter("linkTechMeet", function (content) {
+    return content.replace(
+      /\b(MHV\s*TechMeet|TechMeet)\b/g,
+      `<a href="https://bit.ly/mhvtm-2024" target="_blank" rel="noopener noreferrer">$1</a>`
+    );
+  });
 
   return {
     dir: {
@@ -23,9 +31,3 @@ export default function(eleventyConfig) {
   };
 }
 
-module.exports = function(eleventyConfig) {
-  // Auto-link "TechMeet" mentions
-  eleventyConfig.addFilter("linkTechMeet", function(content) {
-    return content.replace(/(MHV\s*TechMeet|TechMeet)/g, `<a href="https://bit.ly/mhvtm-2024" target="_blank">$1</a>`);
-  });
-};
