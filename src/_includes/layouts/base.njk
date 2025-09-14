@@ -25,12 +25,23 @@
   <header class="site-header">
     <div class="container">
       <h1 class="site-title"><a href="/">Marist Computing Conference</a></h1>
+
       <nav class="site-nav" aria-label="Main">
         <a href="{{ '/' | url }}">Home</a>
-        <a href="{{ '/program/' | url }}">Program</a>
+
+        <div class="dropdown">
+          <a href="{{ '/program/' | url }}">Program ▾</a>
+          <div class="dropdown-menu">
+            <a href="{{ '/program/at-a-glance/' | url }}">At a glance</a>
+            <a href="{{ '/program/full-schedule/' | url }}">Full conference schedule</a>
+          </div>
+        </div>
+
         <a href="{{ '/venue/' | url }}">Venue</a>
         <a href="{{ '/about/' | url }}">About</a>
       </nav>
+
+
     </div>
   </header>
 
