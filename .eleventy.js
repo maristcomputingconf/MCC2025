@@ -22,3 +22,10 @@ export default function(eleventyConfig) {
     pathPrefix: "/MCC2025/"
   };
 }
+
+module.exports = function(eleventyConfig) {
+  // Auto-link "TechMeet" mentions
+  eleventyConfig.addFilter("linkTechMeet", function(content) {
+    return content.replace(/(MHV\s*TechMeet|TechMeet)/g, `<a href="https://bit.ly/mhvtm-2024" target="_blank">$1</a>`);
+  });
+};
