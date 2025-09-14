@@ -66,8 +66,63 @@ a:hover, a:focus { text-decoration: underline; }
 }
 .site-header a { color: var(--white); font-weight: 600; }
 .site-title { margin: 0; padding: 0.5rem 0; }
+.site-nav {
+  display: flex;
+  align-items: center;
+}
 .site-nav a { margin-right: 1rem; font-weight: 600; }
 .site-nav a[aria-current="page"] { text-decoration: underline; }
+
+/* Dropdown menus for site-nav */
+.site-nav .dropdown {
+  position: relative;
+}
+
+/* Arrow toggle */
+.site-nav .dropdown > a::after {
+  content: " ▾";
+  font-size: 0.8em;
+}
+.site-nav .dropdown:hover > a::after {
+  content: " ▴";
+}
+
+/* Dropdown menu hidden by default */
+.site-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;   /* directly below the Program tab */
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--dark-gray);
+  min-width: 200px;
+  flex-direction: column;   /* stack links vertically */
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Links inside dropdown */
+.site-nav .dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: var(--greystone-gray);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Show on hover */
+.site-nav .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Hover/focus state */
+.site-nav .dropdown-menu a:hover,
+.site-nav .dropdown-menu a:focus {
+  background: var(--marist-red);
+  color: var(--white);
+  text-decoration: none;
+}
 
 /* hero */
 .hero { padding: 2rem 0; border-bottom: 4px solid var(--marist-red); }
@@ -122,87 +177,3 @@ a:hover, a:focus { text-decoration: underline; }
   position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
 .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
-
-
-/* Dropdown menus for site-nav */
-.site-nav .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.site-nav .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--white);
-  border: 1px solid var(--dark-gray);
-  min-width: 200px;
-  z-index: 1000;
-}
-
-.site-nav .dropdown-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--greystone-gray);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Show menu on hover */
-.site-nav .dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Hover state with Marist red */
-.site-nav .dropdown-menu a:hover,
-.site-nav .dropdown-menu a:focus {
-  background: var(--marist-red);
-  color: var(--white);
-  text-decoration: none;
-}
-
-/* Keep nav links horizontal */
-.site-nav {
-  display: flex;
-  align-items: center;
-}
-
-/* Dropdown container */
-.site-nav .dropdown {
-  position: relative;
-}
-
-/* Dropdown menu hidden by default */
-.site-nav .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;   /* directly below the Program tab */
-  left: 0;
-  background: var(--white);
-  border: 1px solid var(--dark-gray);
-  min-width: 200px;
-  flex-direction: column;   /* stack links vertically */
-}
-
-/* Links inside dropdown */
-.site-nav .dropdown-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--greystone-gray);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Show on hover */
-.site-nav .dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-/* Hover/focus state */
-.site-nav .dropdown-menu a:hover,
-.site-nav .dropdown-menu a:focus {
-  background: var(--marist-red);
-  color: var(--white);
-  text-decoration: none;
-}
