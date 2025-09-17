@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ELEVENTY_ENV=dev npx @11ty/eleventy --serve --quiet",
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy --pathprefix",
     "clean": "rm -rf _site .cache"
   },
   "devDependencies": {
